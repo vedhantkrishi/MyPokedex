@@ -1,7 +1,6 @@
 package com.example.mypokedex.feature_pokedex.data.remote.response
 
 import com.google.gson.annotations.SerializedName
-import com.jefisu.pokedexcompose.feature_pokedex.data.remote.response.*
 
 data class Versions(
     @SerializedName("generation-i")

@@ -1,4 +1,4 @@
-package com.jefisu.pokedexcompose.feature_pokedex.data.remote.response
+package com.example.mypokedex.feature_pokedex.data.remote.response
 
 import com.google.gson.annotations.SerializedName
 
