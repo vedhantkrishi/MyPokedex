@@ -1,9 +1,6 @@
 package com.example.mypokedex.feature_pokedex.data.remote.response
 
-import com.google.gson.annotations.SerializedName
-
 data class Move(
     val move: MoveX,
-    @SerializedName("version_group_details")
-    val versionGroupDetails: List<VersionGroupDetail>
+    val version_group_details: List<VersionGroupDetail>
 )
