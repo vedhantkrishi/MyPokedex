@@ -4,7 +4,7 @@ import com.google.gson.annotations.SerializedName
 
 data class GenerationViX(
     @SerializedName("omegaruby-alphasapphire")
-    val omegaruby_alphasapphire: OmegarubyAlphasapphireX,
+    val omegarubyAlphasapphire: OmegarubyAlphasapphireX,
     @SerializedName("x-y")
-    val x_y: XYX
+    val xY: XYX
 )

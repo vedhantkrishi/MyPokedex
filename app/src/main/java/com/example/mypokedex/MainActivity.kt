@@ -8,6 +8,7 @@ import androidx.compose.foundation.ExperimentalFoundationApi
 import androidx.compose.material.ExperimentalMaterialApi
 import androidx.compose.material.Surface
 import androidx.navigation.compose.rememberNavController
+import com.example.mypokedex.core.components.Navigation
 import com.example.mypokedex.ui.theme.MyPokedexTheme
 import com.google.accompanist.pager.ExperimentalPagerApi
 import com.google.accompanist.pager.rememberPagerState
@@ -26,7 +27,11 @@ class MainActivity : ComponentActivity() {
                 val navController = rememberNavController()
                 val pagerState = rememberPagerState()
                 Surface {
-
+                    Navigation(
+                        navController = navController,
+                        pagerState = pagerState,
+                        context = this
+                    )
                 }
             }
         }

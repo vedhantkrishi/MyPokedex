@@ -5,5 +5,5 @@ import com.google.gson.annotations.SerializedName
 data class GenerationViiX(
     val icons: IconsX,
     @SerializedName("ultra-sun-ultra-moon")
-    val ultra_sun_ultra_moon: UltraSunUltraMoonX
+    val ultraSunUltraMoon: UltraSunUltraMoonX
 )

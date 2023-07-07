@@ -4,6 +4,6 @@ import com.google.gson.annotations.SerializedName
 
 data class GenerationIX(
     @SerializedName("red-blue")
-    val red_blue: RedBlueX,
+    val redBlue: RedBlueX,
     val yellow: YellowX
 )
