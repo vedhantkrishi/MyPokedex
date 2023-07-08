@@ -47,7 +47,9 @@ fun InfoTabs(
     val scope = rememberCoroutineScope()
     TabRow(
         selectedTabIndex = pagerState.currentPage,
-        backgroundColor = Color.Transparent
+        backgroundColor = Color.Transparent,
+        indicator = {  },
+        divider = {  }
     ) {
         pages.forEachIndexed { index, page ->
             ItemTypeStatAb(

@@ -51,7 +51,7 @@ fun BasicInfoPokemon(
         ) {
             ItemTypeStatAb(
                 text = types.first(),
-                boxColor = parseTypeToColor(types.first())
+                boxColor = Color.White.copy(alpha = 0.2f)
             )
             if (types.size > 1) {
                 ItemTypeStatAb(
