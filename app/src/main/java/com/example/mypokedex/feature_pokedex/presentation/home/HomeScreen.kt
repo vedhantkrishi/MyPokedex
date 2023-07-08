@@ -10,6 +10,7 @@ import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.graphics.graphicsLayer
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
@@ -24,8 +25,12 @@ import com.example.mypokedex.core.presentation.StandardLoadingErrorScreen
 import com.example.mypokedex.core.util.Screen
 import com.example.mypokedex.core.util.asString
 import com.example.mypokedex.feature_pokedex.presentation.home.HomeViewModel
+import com.example.mypokedex.feature_pokedex.presentation.home.components.CustomCard
 import com.example.mypokedex.feature_pokedex.presentation.home.components.SearchBar
 import com.example.mypokedex.feature_pokedex.util.parseTypeToColor
+import com.example.mypokedex.ui.theme.LightBlue
+import com.example.mypokedex.ui.theme.LightGreen
+import com.example.mypokedex.ui.theme.LightPurple
 import com.example.mypokedex.ui.theme.spacing
 import com.google.accompanist.pager.ExperimentalPagerApi
 
@@ -74,5 +79,62 @@ fun HomeScreen(
             hasError = state.hasError,
             errorMessage = state.errorMessage.asString(context)
         )
+        ShowContentAnimation(isVisible = state.query.isBlank()) {
+            CustomCard(
+                text = stringResource(R.string.pokedex),
+                img = R.drawable.ic_pokeball,
+                onClick = { navController.navigate(Screen.PokemonList.route) },
+                imgModifier = Modifier
+                    .size(90.dp)
+                    .graphicsLayer {
+                        rotationZ = 28f
+                        translationY = 40f
+                        translationX = 40f
+                    }
+            )
+            CustomCard(
+                text = stringResource(R.string.favorites),
+                img = R.drawable.ic_favorite,
+                onClick = { navController.navigate(Screen.Favorite.route) },
+                backgroundColor = LightPurple,
+                imgModifier = Modifier
+                    .size(90.dp)
+                    .graphicsLayer {
+                        rotationZ = -30f
+                        translationY = 40f
+                        translationX = 40f
+                    }
+            )
+            Row(horizontalArrangement = Arrangement.spacedBy(8.dp)) {
+                CustomCard(
+                    text = stringResource(R.string.types),
+                    modifier = Modifier.weight(0.5f),
+                    backgroundColor = LightGreen,
+                    img = R.drawable.ic_grass,
+                    onClick = {
+                        navController.navigate(Screen.Type.route)
+                    },
+                    imgModifier = Modifier
+                        .graphicsLayer {
+                            rotationZ = -80f
+                            translationY = 50f
+                            translationX = 50f
+                        }
+                )
+                CustomCard(
+                    text = stringResource(R.string.moves),
+                    modifier = Modifier.weight(0.5f),
+                    backgroundColor = LightBlue,
+                    onClick = { navController.navigate(Screen.Move.route) },
+                    img = R.drawable.ic_battle,
+                    imgModifier = Modifier
+                        .graphicsLayer {
+                            rotationZ = -4f
+                            translationY = 40f
+                            translationX = 20f
+                        }
+                )
+            }
+        }
     }
 }
