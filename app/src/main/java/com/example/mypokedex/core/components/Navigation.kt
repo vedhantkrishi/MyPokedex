@@ -10,6 +10,7 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import com.example.mypokedex.core.util.Screen
 import com.example.mypokedex.feature_pokedex.presentation.detail.DetailScreen
+import com.example.mypokedex.feature_pokedex.presentation.favorites.FavoritesListScreen
 import com.example.mypokedex.feature_pokedex.presentation.home.HomeScreen
 import com.example.mypokedex.feature_pokedex.presentation.moves.MoveScreen
 import com.example.mypokedex.feature_pokedex.presentation.pokemon_list.PokemonListScreen
@@ -78,6 +79,14 @@ fun Navigation(
                 exitTransition = slideOutHorizontally() + fadeOut()
             ) {
                 TypeScreen(navController, context)
+            }
+        }
+        composable(Screen.Favorite.route) {
+            StartAnimation(
+                enterTransition = slideInHorizontally() + fadeIn(),
+                exitTransition = slideOutHorizontally() + fadeOut()
+            ) {
+                FavoritesListScreen(navController)
             }
         }
     }
