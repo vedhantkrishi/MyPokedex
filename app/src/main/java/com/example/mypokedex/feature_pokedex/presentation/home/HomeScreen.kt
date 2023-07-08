@@ -3,7 +3,10 @@ package com.example.mypokedex.feature_pokedex.presentation.home
 import android.content.Context
 import androidx.compose.animation.ExperimentalAnimationApi
 import androidx.compose.foundation.ExperimentalFoundationApi
+import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.*
+import androidx.compose.foundation.shape.RoundedCornerShape
+import androidx.compose.material.Button
 import androidx.compose.material.ExperimentalMaterialApi
 import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Text
@@ -11,6 +14,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.graphicsLayer
+import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
@@ -73,6 +77,17 @@ fun HomeScreen(
                         navController.navigate(Screen.Detail.navArgs(state.pokemon.name))
                     }
                 )
+            }
+            Button(
+                onClick = { viewModel.onEvent(HomeEvent.ClearSearchText) },
+                shape = RoundedCornerShape(20.dp)
+            ) {
+                Image(painterResource(id = R.drawable.ic_pokeball),
+                    contentDescription = "Home button icon",
+                    modifier = Modifier.size(20.dp)
+                )
+                Spacer(modifier = Modifier.width(4.dp))
+                Text(text = "Go Back", color = Color.White)
             }
         }
         StandardLoadingErrorScreen(
