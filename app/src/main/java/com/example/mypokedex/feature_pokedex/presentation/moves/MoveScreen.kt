@@ -35,7 +35,7 @@ fun MoveScreen(
             isLoading = state.isLoading
         ) { index, move ->
             val size = state.moves.size
-            if (index >= size - 1 && !state.isLoading) {
+            if (index >= size - 10 && !state.isLoading) {
                 viewModel.getMoves()
             }
             ListItem(

@@ -120,7 +120,7 @@ fun HomeScreen(
                         translationX = 40f
                     }
             )
-            Row(horizontalArrangement = Arrangement.spacedBy(8.dp)) {
+            Row(horizontalArrangement = Arrangement.spacedBy(12.dp)) {
                 CustomCard(
                     text = stringResource(R.string.types),
                     modifier = Modifier.weight(0.5f),

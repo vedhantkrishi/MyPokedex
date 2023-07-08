@@ -41,7 +41,7 @@ fun PokemonListScreen(
             isLoading = state.isLoading
         ) { index, pokemon ->
             val size = state.pokemons.size
-            if (index >= size - 1 && !state.isLoading) {
+            if (index >= size - 6 && !state.isLoading) {
                 viewModel.getPokemons()
             }
             PokemonItem(
