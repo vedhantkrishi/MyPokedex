@@ -26,53 +26,60 @@ fun About(
     pokemonInfo: Pokemon,
     color: Color
 ) {
-    Row(
-        verticalAlignment = Alignment.CenterVertically,
-        horizontalArrangement = Arrangement.spacedBy(
-            space = MaterialTheme.spacing.extraLarge,
-            alignment = Alignment.CenterHorizontally
-        ),
+    Column(
         modifier = Modifier
             .fillMaxWidth()
-            .padding(vertical = MaterialTheme.spacing.small)
+            .fillMaxHeight(),
+        horizontalAlignment = Alignment.CenterHorizontally
     ) {
-        CharacteristicsAbout(
-            painter = R.drawable.ic_balance,
-            value = pokemonInfo.weight.toString(),
-            dataUnit = "Kg"
-        )
-        Divider(
-            color = MaterialTheme.colors.onSurface,
+        Row(
+            verticalAlignment = Alignment.CenterVertically,
+            horizontalArrangement = Arrangement.spacedBy(
+                space = MaterialTheme.spacing.extraLarge,
+                alignment = Alignment.CenterHorizontally
+            ),
             modifier = Modifier
-                .height(50.dp)
-                .width(2.dp)
-        )
-        CharacteristicsAbout(
-            painter = R.drawable.ic_height,
-            value = pokemonInfo.height.toString(),
-            dataUnit = "m"
-        )
-    }
-    Spacer(modifier = Modifier.height(MaterialTheme.spacing.small))
-    Text(
-        text = stringResource(R.string.abilities),
-        style = MaterialTheme.typography.h5
-    )
-    Spacer(modifier = Modifier.height(MaterialTheme.spacing.small))
-    LazyVerticalGrid(
-        cells = GridCells.Fixed(2),
-        verticalArrangement = Arrangement.spacedBy(MaterialTheme.spacing.small),
-        horizontalArrangement = Arrangement.spacedBy(MaterialTheme.spacing.small),
-        modifier = Modifier.fillMaxWidth()
-    ) {
-        items(pokemonInfo.abilities) { ability ->
-            ItemTypeStatAb(
-                text = ability,
-                boxColor = color,
-                boxWidth = 130.dp,
-                boxHeight = 40.dp,
-                boxShape = RoundedCornerShape(16.dp)
+                .fillMaxWidth()
+                .padding(vertical = MaterialTheme.spacing.small)
+        ) {
+            CharacteristicsAbout(
+                painter = R.drawable.ic_balance,
+                value = pokemonInfo.weight.toString(),
+                dataUnit = "Kg"
             )
+            Divider(
+                color = MaterialTheme.colors.onSurface,
+                modifier = Modifier
+                    .height(50.dp)
+                    .width(2.dp)
+            )
+            CharacteristicsAbout(
+                painter = R.drawable.ic_height,
+                value = pokemonInfo.height.toString(),
+                dataUnit = "m"
+            )
+        }
+        Spacer(modifier = Modifier.height(MaterialTheme.spacing.small))
+        Text(
+            text = stringResource(R.string.abilities),
+            style = MaterialTheme.typography.h5
+        )
+        Spacer(modifier = Modifier.height(MaterialTheme.spacing.small))
+        LazyVerticalGrid(
+            cells = GridCells.Fixed(2),
+            verticalArrangement = Arrangement.spacedBy(MaterialTheme.spacing.small),
+            horizontalArrangement = Arrangement.spacedBy(MaterialTheme.spacing.small),
+            modifier = Modifier.fillMaxWidth()
+        ) {
+            items(pokemonInfo.abilities) { ability ->
+                ItemTypeStatAb(
+                    text = ability,
+                    boxColor = color,
+                    boxWidth = 130.dp,
+                    boxHeight = 40.dp,
+                    boxShape = RoundedCornerShape(16.dp)
+                )
+            }
         }
     }
 }
