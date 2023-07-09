@@ -11,6 +11,7 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.style.TextAlign
 import com.example.mypokedex.R
 import com.example.mypokedex.core.components.LoadingAnimation
+import com.example.mypokedex.core.components.LottieLoading
 import com.example.mypokedex.ui.theme.spacing
 
 @Composable
@@ -26,7 +27,7 @@ fun StandardLoadingErrorScreen(
                 modifier = Modifier.fillMaxSize(),
                 contentAlignment = Alignment.Center
             ) {
-                LoadingAnimation()
+                LottieLoading()
             }
         }
         hasError -> {
