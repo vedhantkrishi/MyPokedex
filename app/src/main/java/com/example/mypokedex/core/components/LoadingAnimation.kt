@@ -75,5 +75,9 @@ fun LoadingAnimation(
 @Composable
 fun LottieLoading() {
     val composition by rememberLottieComposition(spec = RawRes(R.raw.diglet_loading))
-    LottieAnimation(composition = composition, iterations = LottieConstants.IterateForever)
+    LottieAnimation(
+        composition = composition,
+        iterations = LottieConstants.IterateForever,
+        speed = 1.5f
+    )
 }

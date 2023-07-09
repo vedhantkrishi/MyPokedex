@@ -8,6 +8,7 @@ import androidx.compose.runtime.Composable
 import androidx.navigation.*
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
+import com.example.mypokedex.core.presentation.SplashScreen
 import com.example.mypokedex.core.util.Screen
 import com.example.mypokedex.feature_pokedex.presentation.detail.DetailScreen
 import com.example.mypokedex.feature_pokedex.presentation.favorites.FavoritesListScreen
@@ -30,8 +31,13 @@ fun Navigation(
 ) {
     NavHost(
         navController = navController,
-        startDestination = Screen.Home.route
+        startDestination = Screen.SplashScreen.route
     ) {
+        composable(
+            route = Screen.SplashScreen.route
+        ) {
+            SplashScreen(navController = navController)
+        }
         composable(
             route = Screen.Home.route
         ) {

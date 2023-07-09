@@ -1,6 +1,7 @@
 package com.example.mypokedex.core.util
 
 sealed class Screen(val route: String) {
+    object SplashScreen : Screen("splash_screen")
     object Home : Screen("home_screen")
     object Detail : Screen("detail_screen")
     object PokemonList : Screen("pokemon_list_screen")
